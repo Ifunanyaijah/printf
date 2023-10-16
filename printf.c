@@ -1,10 +1,10 @@
 #include "main.h"
-int printf(const char *format, ...);
+int printf(const char *format, ...)
 {
 int characters = 0;
 va_list my_list;
 
-if(format == NULL){
+if (format == NULL){
     return (-1);
 }
 va_start(my_list, format);
@@ -35,17 +35,17 @@ while(*format)
         char *str = va_arg(my_list, char*);
         int str_len = 0;
         
-        //stringlength function
-        while (str[str_len] = '\0')
+       
+        while (str[str_len] != '\0')
         str_len++;
-        //for writing the stringlength
+       
         write(1, str, str_len);
-        chara_print += str_len;
+        characters += str_len;
     }
     }
     format++;
 }
-    va end(my_list);
+    va_end(my_list);
     return characters;
     
 }
